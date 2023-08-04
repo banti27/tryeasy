@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Deploy') {
           steps {
-            echo 'START: deployment'
+            bat 'mvnw spring-boot:run'
           }
     }
 
