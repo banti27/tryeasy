@@ -8,6 +8,11 @@ pipeline {
         echo 'END: Build Success'
       }
     }
+    stage('Deploy') {
+          steps {
+            echo 'START: deployment'
+          }
+    }
 
   }
 }
