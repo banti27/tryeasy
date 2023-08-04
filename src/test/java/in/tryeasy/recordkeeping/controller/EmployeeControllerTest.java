@@ -1,6 +1,7 @@
 package in.tryeasy.recordkeeping.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import in.tryeasy.recordkeeping.constant.Gender;
 import in.tryeasy.recordkeeping.model.EmployeeCreationRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ class EmployeeControllerTest {
         employee.setLastName("Test Last Name");
         employee.setFatherName("Test Father Name");
         employee.setMotherName("Test Mother Name");
+        employee.setGender(Gender.MALE);
         this.mockMvc.perform(post("/api/employee")
                         .content(this.objectMapper.writeValueAsString(employee))
                         .contentType("application/json"))
