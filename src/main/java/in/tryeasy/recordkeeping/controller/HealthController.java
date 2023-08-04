@@ -13,7 +13,7 @@ public class HealthController {
     @GetMapping(path = {"/", "/health", "/status"})
     public String getHealth() {
         log.info("********** STATUS API CALLED ***************");
-        return String.format("App is UP and RUNNING: %s", LocalDateTime.now());
+        return String.format("Mikku-App is UP and RUNNING: %s", LocalDateTime.now());
     }
 
 }
