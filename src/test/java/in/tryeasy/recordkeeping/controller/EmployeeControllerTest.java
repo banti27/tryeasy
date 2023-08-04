@@ -22,6 +22,10 @@ class EmployeeControllerTest {
     @Test
     void testSaveEmployee() throws Exception {
         final var employee = new EmployeeCreationRequest();
+        employee.setFirstName("Test First Name");
+        employee.setLastName("Test Last Name");
+        employee.setFatherName("Test Father Name");
+        employee.setMotherName("Test Mother Name");
         this.mockMvc.perform(post("/api/employee")
                         .content(this.objectMapper.writeValueAsString(employee))
                         .contentType("application/json"))
