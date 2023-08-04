@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'START: Build'
-        bat './mvnw.bat clean install'
+        bat 'mvnw clean install'
         echo 'END: Build Success'
       }
     }
