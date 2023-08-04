@@ -2,6 +2,7 @@ package in.tryeasy.recordkeeping.controller;
 
 import in.tryeasy.recordkeeping.model.EmployeeCreationRequest;
 import in.tryeasy.recordkeeping.model.EmployeeCreationResponse;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class EmployeeController {
 
 
     @PostMapping
-    public ResponseEntity<EmployeeCreationResponse> saveEmployee(@RequestBody EmployeeCreationRequest employeeCreationRequest) {
+    public ResponseEntity<EmployeeCreationResponse> saveEmployee(@Valid @RequestBody EmployeeCreationRequest employeeCreationRequest) {
         log.info("Employee: {}", employeeCreationRequest);
         final var response = new EmployeeCreationResponse();
         response.setEmployeeId(UUID.randomUUID());
